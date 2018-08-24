@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import City from './City'
 
 class Home extends Component {
   state = {
@@ -32,8 +32,7 @@ class Home extends Component {
 
     return (
       <div>
-        {usaCities.map((item, index) => <li key={index}>{item.location.city}</li>)}
-
+        {usaCities.map((city, index) => <City key={index} city={city} />)}
       </div>)
   }
 }

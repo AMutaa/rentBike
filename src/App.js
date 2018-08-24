@@ -14,10 +14,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/:id" component={CityDetail} />
-
       </Switch>
-
-
     </Router>
 
   </div>
