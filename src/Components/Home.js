@@ -13,7 +13,7 @@ class Home extends Component {
       const allBikes = await results.json()
       const usaCities = allBikes.networks.filter((item) => item.location.country === 'US')
       console.log(usaCities);
-
+      console.log(usaCities.id)
 
 
 
