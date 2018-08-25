@@ -1,3 +1,25 @@
 body{
   text-align: center;
+  max-height: 100vh;
+}
+
+.city_detail{
+  display: flex;
+  flex-direction: row;
+}
+
+#map{
+  width:50vw;
+  height: 90vh;
+  max-height: 90vh;
+
+
+
+}
+
+.station_info{
+ width: 50vw;
+ max-height: 90vh;
+ overflow: hidden;
+ overflow-y: scroll;
 }

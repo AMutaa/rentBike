@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Station from "./Station"
+import Station from "./Station";
+import Map from "./Map";
 class CityDetail extends Component {
   state = {
     cityName: '',
@@ -30,11 +31,19 @@ class CityDetail extends Component {
 
     const { cityName, cityBikes, stations } = this.state
     return (
-      <div>
-        <h1>{cityName}</h1>
-        <h3>{cityBikes}</h3>
-        {stations.map((station, index) => <Station key={index} station={station} />)}
-      </div>
+      <div className="city_detail">
+        <div >
+          <h1>{cityName}</h1>
+          <h3>{cityBikes}</h3>
+
+          <ul className="station_info">
+            {stations.map((station, index) =>
+              <li key={index}><Station station={station} /></li>)}
+          </ul>
+        </div>
+
+        {<Map stations={stations} />}
+      </div >
     )
   }
 
