@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import City from './City'
 
+
 class Home extends Component {
   state = {
     usaCities: [],
@@ -12,10 +13,6 @@ class Home extends Component {
       const results = await fetch('http://api.citybik.es/v2/networks');
       const allBikes = await results.json()
       const usaCities = allBikes.networks.filter((item) => item.location.country === 'US')
-      console.log(usaCities);
-      console.log(usaCities.id)
-
-
 
       this.setState({
         usaCities: usaCities,

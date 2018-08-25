@@ -11,7 +11,7 @@ class CityDetail extends Component {
 
     const results = await fetch(`http://api.citybik.es/v2/networks/${this.props.match.params.id}`);
     const details = await results.json()
-    console.log(details)
+
     const cityName = details.network.location.city
     const cityBikes = details.network.name
     const stations = details.network.stations

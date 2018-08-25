@@ -5,19 +5,27 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Link,
 } from 'react-router-dom'
 import './App.css';
 
 const App = () => (
-  <div className="App">
-    <Router>
+
+
+  <Router>
+    <div className="App">
+      <Link to="/">
+        <div>
+          <h1>BIKE****CATALOG</h1>
+        </div>
+      </Link>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/:id" component={CityDetail} />
       </Switch>
-    </Router>
+    </div >
+  </Router>
 
-  </div>
 )
 
 export default App;
