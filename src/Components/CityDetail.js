@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-import Station from "./Station";
-import Map from "./Map";
+import Stations from "./Stations"
 class CityDetail extends Component {
   state = {
     cityName: '',
-    cityBikes: '',
+    cityBike: '',
     stations: []
+
 
   }
   async componentDidMount() {
 
     const results = await fetch(`http://api.citybik.es/v2/networks/${this.props.match.params.id}`);
     const details = await results.json()
-
     const cityName = details.network.location.city
-    const cityBikes = details.network.name
+    const cityBike = details.network.name
     const stations = details.network.stations
+    console.log(stations);
+    this.renderMap()
+
 
     this.setState({
+      details: details,
       cityName: cityName,
-      cityBikes: cityBikes,
+      cityBike: cityBike,
       stations: stations
     })
 
@@ -27,26 +30,48 @@ class CityDetail extends Component {
   } catch(e) {
     console.log(e);
   }
+
+  renderMap = () => {
+    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCiu8cL5KicirIURCmT0CaTDORhtqApNsQ&callback=initMap")
+    window.initMap = this.initMap
+  }
+
+  initMap = () => {
+    var map = new window.google.maps.Map(document.getElementById('map'), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8
+    });
+  }
+
+
   render() {
 
-    const { cityName, cityBikes, stations } = this.state
+    const { cityName, cityBike, stations } = this.state
     return (
-      <div className="city_detail">
-        <div >
-          <h1>{cityName}</h1>
-          <h3>{cityBikes}</h3>
+      <div>
+        <h1>{cityName}</h1>
+        <h3>{cityBike}</h3>
+        <div className="fresh">
+          <Stations stations={stations} />
+          <main>
+            <div id="map"></div>
+          </main >
 
-          <ul className="station_info">
-            {stations.map((station, index) =>
-              <li key={index}><Station station={station} /></li>)}
-          </ul>
         </div>
 
-        {<Map stations={stations} />}
       </div >
     )
   }
 
+}
+
+function loadScript(url) {
+  var index = window.document.getElementsByTagName("script")[0]
+  var script = window.document.createElement("script")
+  script.src = url
+  script.async = true
+  script.defer = true
+  index.parentNode.insertBefore(script, index)
 }
 
 

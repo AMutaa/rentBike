@@ -13,8 +13,11 @@ body{
   height: 90vh;
   max-height: 90vh;
 
+}
 
-
+.fresh{
+  display: flex;
+  flex-direction: row;
 }
 
 .station_info{
