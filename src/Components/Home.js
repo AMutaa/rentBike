@@ -28,7 +28,7 @@ class Home extends Component {
     const { usaCities } = this.state;
 
     return (
-      <div>
+      <div className="cities">
         {usaCities.map((city, index) => <City key={index} city={city} />)}
       </div>)
   }

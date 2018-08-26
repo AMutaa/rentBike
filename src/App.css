@@ -8,6 +8,18 @@ body{
   flex-direction: row;
 }
 
+.cities{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+
+}
+.city_name{
+  border: 2px solid peru;
+  text-decoration: none;
+  color: indigo;
+  background: whitesmoke ;
+}
 #map{
   width:50vw;
   height: 90vh;
