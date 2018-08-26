@@ -4,27 +4,33 @@ class CityDetail extends Component {
   state = {
     cityName: '',
     cityBike: '',
-    stations: []
-
-
+    stations: [],
+    longitude: '',
+    latitude: '',
+    name: ''
   }
   async componentDidMount() {
 
     const results = await fetch(`http://api.citybik.es/v2/networks/${this.props.match.params.id}`);
     const details = await results.json()
+    console.log(details)
     const cityName = details.network.location.city
     const cityBike = details.network.name
     const stations = details.network.stations
-    console.log(stations);
-    this.renderMap()
+    const longitude = details.network.location.longitude
+    const latitude = details.network.location.latitude
+
+
 
 
     this.setState({
       details: details,
       cityName: cityName,
       cityBike: cityBike,
-      stations: stations
-    })
+      stations: stations,
+      longitude: longitude,
+      latitude: latitude
+    }, this.renderMap())
 
 
   } catch(e) {
@@ -38,9 +44,18 @@ class CityDetail extends Component {
 
   initMap = () => {
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 8
+      center: { lat: this.state.latitude, lng: this.state.longitude },
+      zoom: 14
     });
+    this.state.stations.map(station => {
+
+      var marker = new window.google.maps.Marker({
+        position: { lat: station.latitude, lng: station.longitude },
+        map: map,
+        title: "Hello World"
+      });
+    }
+    )
   }
 
 
