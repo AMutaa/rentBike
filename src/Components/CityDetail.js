@@ -63,17 +63,17 @@ class CityDetail extends Component {
 
     const { cityName, cityBike, stations } = this.state
     return (
-      <div>
-        <h1>{cityName}</h1>
-        <h3>{cityBike}</h3>
-        <div className="fresh">
-          <Stations stations={stations} />
-          <main>
-            <div id="map"></div>
-          </main >
-
+      <div className="city_detail">
+        <div className="city_title">
+          <h1>{cityName}</h1>
+          <h3>{cityBike}</h3>
         </div>
-
+        <div>
+          <Stations stations={stations} />
+        </div>
+        <div>
+          <div id="map"></div>
+        </div >
       </div >
     )
   }
