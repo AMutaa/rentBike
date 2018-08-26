@@ -8,6 +8,10 @@ body{
   margin: 10px auto;
   font-family: 'Open Sans Condensed', sans-serif;
 }
+p{
+font-weight: bolder;
+font-size:20px;
+}
 .cities{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -57,7 +61,7 @@ body{
 .station_detail{
 display:grid;
 grid-template-columns: 1fr 1fr;
-grid-template-rows:1fr 1.5fr 0.5fr;
+grid-template-rows:0.5fr 1.5fr 0.5fr;
 border:1px solid gray;
 margin-bottom:10px;
 }

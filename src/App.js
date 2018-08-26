@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Components/Home'
 import CityDetail from './Components/CityDetail'
+import Loading from "./Components/Loading"
 import {
   BrowserRouter as Router,
   Route,
@@ -17,6 +18,7 @@ const App = () => (
       <Link to="/">
         <div>
           <h1>BIKE****CATALOG</h1>
+
         </div>
       </Link>
       <Switch>

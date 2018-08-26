@@ -2,25 +2,25 @@ import React from "react";
 
 function freeBikechecker(num) {
   if (num === 0) {
-    return `No Free Bike`;
+    return `NO FREE BIKE`;
   }
   else if (num > 0 && num < 2) {
-    return `Free Bike`;
+    return `FREE BIKE`;
   }
   else {
-    return `Free Bikes`;
+    return `FREE BIKES`;
   }
 }
 
 function emptySlotChecker(num) {
   if (num === 0) {
-    return `No Empty Slot`;
+    return `NO EMPTY SLOT`;
   }
   else if (num > 0 && num < 2) {
-    return `Empty Slot`;
+    return `EMPTY SLOT`;
   }
   else {
-    return `Empty Slots`;
+    return `EMPTY SLOTS`;
   }
 
 }
