@@ -60,7 +60,7 @@ class CityDetail extends Component {
     //Create an InfoWindow
     var infowindow = new window.google.maps.InfoWindow()
 
-    this.state.stations.map(station => {
+    this.state.stations.forEach((station) => {
       var contentString = `${station.name}`
       //Create a Marker
       var marker = new window.google.maps.Marker({

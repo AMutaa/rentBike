@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './Components/Home'
 import CityDetail from './Components/CityDetail'
-import Loading from "./Components/Loading"
 import {
   BrowserRouter as Router,
   Route,
