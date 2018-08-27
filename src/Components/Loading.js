@@ -5,8 +5,8 @@ class Loading extends Component {
   render() {
     return (
       <div>
-        <img src={bicycle}></img>
-
+        <img src={bicycle} className="logo"></img>
+        <h3>Loading City Information ...</h3>
       </div>
     )
   }

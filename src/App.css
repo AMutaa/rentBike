@@ -76,3 +76,13 @@ margin-bottom:10px;
 span{
   font-size: 40px;
 }
+
+.logo {
+  animation:logo-spin infinite 2s linear;
+  height: 90px;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

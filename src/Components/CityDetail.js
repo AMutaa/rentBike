@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Stations from "./Stations"
+import Stations from "./Stations";
+import Loading from "./Loading";
 class CityDetail extends Component {
   state = {
     cityName: '',
@@ -7,7 +8,9 @@ class CityDetail extends Component {
     stations: [],
     longitude: '',
     latitude: '',
-    name: ''
+
+    name: '',
+    loading: true
   }
   async componentDidMount() {
 
@@ -22,15 +25,19 @@ class CityDetail extends Component {
 
 
 
+    setTimeout(() => {
+      this.setState({
+        details: details,
+        cityName: cityName,
+        cityBike: cityBike,
+        stations: stations,
+        longitude: longitude,
+        latitude: latitude,
+        loading: false,
+      }, this.renderMap())
 
-    this.setState({
-      details: details,
-      cityName: cityName,
-      cityBike: cityBike,
-      stations: stations,
-      longitude: longitude,
-      latitude: latitude
-    }, this.renderMap())
+    }, 1000)
+
 
 
   } catch(e) {
@@ -43,17 +50,34 @@ class CityDetail extends Component {
   }
 
   initMap = () => {
+    //Create a map
+
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: this.state.latitude, lng: this.state.longitude },
-      zoom: 14
-    });
-    this.state.stations.map(station => {
+      zoom: 15
 
+    });
+    //Create an InfoWindow
+    var infowindow = new window.google.maps.InfoWindow()
+
+    this.state.stations.map(station => {
+      var contentString = `${station.name}`
+      //Create a Marker
       var marker = new window.google.maps.Marker({
         position: { lat: station.latitude, lng: station.longitude },
         map: map,
         title: "Hello World"
       });
+
+      //Click On A Marker
+      marker.addListener('click', function () {
+
+        //Change the content
+        infowindow.setContent(contentString)
+        //Open an InfoWindow
+        infowindow.open(map, marker);
+
+      })
     }
     )
   }
@@ -61,20 +85,29 @@ class CityDetail extends Component {
 
   render() {
 
-    const { cityName, cityBike, stations } = this.state
+    const { cityName, cityBike, stations, loading } = this.state
     return (
-      <div className="city_detail">
-        <div className="city_title">
-          <h1>{cityName}</h1>
-          <h3>{cityBike}</h3>
-        </div>
-        <div>
-          <Stations stations={stations} />
-        </div>
-        <div>
-          <div id="map"></div>
-        </div >
-      </div >
+      <div>
+        {
+          loading ? (
+            <Loading />
+          ) : (
+              <div className="city_detail">
+                <div className="city_title">
+                  <h1>{cityName}</h1>
+                  <h3>{cityBike}</h3>
+                </div>
+                <div>
+                  <Stations stations={stations} />
+                </div>
+                <div>
+                  <div id="map"></div>
+                </div >
+              </div >
+            )
+        }
+
+      </div>
     )
   }
 
