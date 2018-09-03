@@ -15,13 +15,14 @@ font-size:20px;
 .cities{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 5px;
+
 }
 .city_name{
   border: 2px solid peru;
   text-decoration: none;
   color: indigo;
   background: whitesmoke ;
+  margin: 1%;
 }
 
 .city_detail{
@@ -85,4 +86,15 @@ span{
 @keyframes logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+  .cities{
+    display: flex;
+    flex-direction:column;
+  }
+
+  .city_detail{
+    grid-template-columns: 1fr;
+  }
 }
