@@ -8,7 +8,6 @@ class CityDetail extends Component {
     stations: [],
     longitude: '',
     latitude: '',
-
     name: '',
     loading: true
   }
