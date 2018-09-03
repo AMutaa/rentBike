@@ -10,7 +10,7 @@ class Home extends Component {
 
   async componentDidMount() {
     try {
-      const results = await fetch('http://api.citybik.es/v2/networks');
+      const results = await fetch('https://api.citybik.es/v2/networks');
       const allBikes = await results.json()
       const usaCities = allBikes.networks.filter((item) => item.location.country === 'US')
 

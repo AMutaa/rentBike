@@ -13,7 +13,7 @@ class CityDetail extends Component {
   }
   async componentDidMount() {
 
-    const results = await fetch(`http://api.citybik.es/v2/networks/${this.props.match.params.id}`);
+    const results = await fetch(`https://api.citybik.es/v2/networks/${this.props.match.params.id}`);
     const details = await results.json()
     console.log(details)
     const cityName = details.network.location.city
