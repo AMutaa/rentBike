@@ -16,7 +16,7 @@ const App = () => (
     <div className="App">
       <h1>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          BIKE****CATALOG
+          CITY BIKES
         </Link>
       </h1>
       <Switch>
