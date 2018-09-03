@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from './Components/Home'
-import CityDetail from './Components/CityDetail'
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Link,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import Home from './Components/Home';
+import CityDetail from './Components/CityDetail';
 import './App.css';
 
 const App = () => (
@@ -15,7 +15,7 @@ const App = () => (
   <Router>
     <div className="App">
       <h1>
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: 'none' }}>
           BIKE****CATALOG
         </Link>
       </h1>
