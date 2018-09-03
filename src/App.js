@@ -14,12 +14,11 @@ const App = () => (
 
   <Router>
     <div className="App">
-      <Link to="/">
-        <div>
-          <h1>BIKE****CATALOG</h1>
-
-        </div>
-      </Link>
+      <h1>
+        <Link to="/">
+          BIKE****CATALOG
+        </Link>
+      </h1>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/:id" component={CityDetail} />
