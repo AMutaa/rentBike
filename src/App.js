@@ -16,9 +16,11 @@ const App = () => (
     <div className="App">
       <h1>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          CITY BIKES
+          CITY BIKES <br />
+
         </Link>
       </h1>
+      <h2>A fun a convenient way to get around</h2>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/:id" component={CityDetail} />

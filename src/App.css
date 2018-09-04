@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
 }
+
 body{
   text-align: center;
   max-height: 100vh;
@@ -12,6 +13,17 @@ body{
   background-repeat: no-repeat; */
 }
 
+@font-face {
+  font-family: 'Dehasta';
+  src: url('./Dehasta\ Momentos\ Regular.otf');
+}
+h1{
+  font-family: Dehasta;
+  font-size:40px;
+}
+span{
+  font-size: 5px;
+}
 h3{
   margin: 5px;
 }
