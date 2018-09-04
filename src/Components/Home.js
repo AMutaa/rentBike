@@ -28,9 +28,14 @@ class Home extends Component {
     const { usaCities } = this.state;
 
     return (
-      <div className="cities">
-        {usaCities.map((city, index) => <City key={index} city={city} />)}
-      </div>)
+      <div>
+        <h2 className="select">Select your City</h2>
+        <div className="cities">
+          {usaCities.map((city, index) => <City key={index} city={city} />)}
+
+        </div>
+      </div >)
+
   }
 }
 

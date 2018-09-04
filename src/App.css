@@ -8,9 +8,6 @@ body{
   width: 90vw;
   margin: 10px auto;
   font-family: 'Open Sans Condensed', sans-serif;
-  /* background-image: url('https://images.pexels.com/photos/977962/pexels-photo-977962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size: cover;
-  background-repeat: no-repeat; */
 }
 
 @font-face {
@@ -20,10 +17,12 @@ body{
 h1{
   font-family: Dehasta;
   font-size:40px;
+  margin-bottom:0;
 }
-span{
-  font-size: 5px;
+h2{
+  margin:0;
 }
+
 h3{
   margin: 5px;
 }
@@ -31,17 +30,26 @@ p{
 font-weight: bolder;
 font-size:20px;
 }
+sup{
+  font-size: 15px;
+}
+.select{
+  margin: 20px;
+}
 .cities{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
 .city_name{
-  border: 2px solid peru;
+
+  border-radius: 5px;
   text-decoration: none;
-  color: indigo;
-  background: whitesmoke ;
+  color: black;
+  letter-spacing: 1px;
+  background: #FFBE06;
   margin: 5px;
+  font-weight: bold;
 }
 
 .city_detail{

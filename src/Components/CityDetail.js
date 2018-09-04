@@ -93,7 +93,7 @@ class CityDetail extends Component {
           ) : (
               <div className="city_detail">
                 <div className="city_title">
-                  <h1>{cityName}</h1>
+                  <h3>{cityName}</h3>
                   <h3>{cityBike}</h3>
                 </div>
                 <div>

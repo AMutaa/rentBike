@@ -14,13 +14,19 @@ const App = () => (
 
   <Router>
     <div className="App">
-      <h1>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          CITY BIKES <br />
 
-        </Link>
-      </h1>
-      <h2>A fun a convenient way to get around</h2>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1>
+          CITY BIKES
+          <sup>TM</sup>
+        </h1>
+        <h2>
+          A fun a convenient way to get around
+       </h2>
+
+      </Link>
+
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/:id" component={CityDetail} />
