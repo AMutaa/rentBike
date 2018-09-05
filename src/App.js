@@ -18,7 +18,7 @@ const App = () => (
       <Link to="/" style={{ textDecoration: 'none' }}>
         <h1>
           CITY BIKES
-          <sup>TM</sup>
+          <sup>USA</sup>
         </h1>
         <h2>
           A fun a convenient way to get around
