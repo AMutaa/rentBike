@@ -1,5 +1,8 @@
 import React from "react";
 
+
+//MyFunctions
+
 function freeBikechecker(num) {
   if (num === 0) {
     return `NO FREE BIKE`;
