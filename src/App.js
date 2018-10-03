@@ -21,7 +21,7 @@ const App = () => (
           <sup>USA</sup>
         </h1>
         <h2>
-          A fun a convenient way to get around
+          A fun and convenient way to get around
        </h2>
 
       </Link>
