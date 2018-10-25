@@ -1,8 +1,8 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   text-align: center;
   max-height: 100vh;
   width: 90vw;
@@ -14,36 +14,42 @@ body{
   font-family: 'Dehasta';
   src: url('./Dehasta\ Momentos\ Regular.otf');
 }
-h1{
+
+h1 {
   font-family: Dehasta;
-  font-size:40px;
-  margin-bottom:0;
-}
-h2{
-  margin:0;
+  font-size: 40px;
+  margin-bottom: 0;
 }
 
-h3{
+h2 {
+  margin: 0;
+}
+
+h3 {
   margin: 5px;
 }
-p{
-font-weight: bolder;
-font-size:20px;
+
+p {
+  font-weight: bolder;
+  font-size: 20px;
 }
-sup{
+
+sup {
   font-size: 15px;
-  margin-left:5px;
+  margin-left: 5px;
 }
-.select{
+
+.select {
   margin: 20px;
 }
-.cities{
+
+.cities {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
-.city_name{
 
+.city_name {
   border-radius: 5px;
   text-decoration: none;
   color: black;
@@ -53,19 +59,19 @@ sup{
   font-weight: bold;
 }
 
-.city_detail{
-  margin:0 auto;
+.city_detail {
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1fr auto;
   grid-gap: 20px;
 }
 
-.city_title{
+.city_title {
   grid-column: 1/-1;
 }
 
-.station_info{
+.station_info {
   padding: 10px 20px;
   margin: 0;
   width: 100%;
@@ -74,11 +80,11 @@ sup{
   overflow: hidden;
   overflow-y: scroll;
   border: 1px solid gray;
- }
+}
 
 
 
-#map{
+#map {
   width: 100%;
   height: 75vh;
   max-height: 75vh;
@@ -87,42 +93,49 @@ sup{
 
 
 
-.station_detail{
-display:grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows:0.5fr 1.5fr 0.5fr;
-border:1px solid gray;
-margin-bottom:10px;
+.station_detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 0.5fr;
+  border: 1px solid gray;
+  margin-bottom: 10px;
 }
-#station_name{
+
+#station_name {
   grid-column: 1/-1;
   border-bottom: 1px solid gray;
 }
-#station_timestamp{
+
+#station_timestamp {
   grid-column: 1/-1;
 }
 
-span{
+span {
   font-size: 40px;
 }
 
 .logo {
-  animation:logo-spin infinite 2s linear;
+  animation: logo-spin infinite 2s linear;
   height: 90px;
 }
 
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .cities{
+  .cities {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
   }
 
-  .city_detail{
+  .city_detail {
     grid-template-columns: 1fr;
   }
 }
