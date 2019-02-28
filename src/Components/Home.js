@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import City from './City'
+import City from './City';
+import FilterBox from './FilterBox';
 
 
 class Home extends Component {
@@ -29,10 +30,10 @@ class Home extends Component {
 
     return (
       <div>
+        <FilterBox />
         <h2 className="select">Select your City</h2>
         <div className="cities">
           {usaCities.map((city, index) => <City key={index} city={city} />)}
-
         </div>
       </div >)
 
