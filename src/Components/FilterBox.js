@@ -8,8 +8,9 @@ export default class FilterBox extends Component {
 
   handleChange = (e) => {
     const typedChar = e.target.value
+    console.log(typedChar)
     this.setState({
-      searchInput: e.target.value
+      searchInput: typedChar
     })
   }
 
@@ -17,7 +18,7 @@ export default class FilterBox extends Component {
   render() {
     const { searchInput } = this.state
     return (
-      <FilterWrapper value={searchInput}>
+      <FilterWrapper onChange={this.handleChange} value={searchInput}>
 
       </FilterWrapper>
     )
