@@ -39,6 +39,7 @@ class Home extends Component {
     console.log(filteredResults)
     const filteredResults2 = usaCities.filter((item) => item.location.city.toLowerCase() === searchInput)
     console.log(filteredResults2)
+    console.log(usaCities)
     return (
       <div>
         <FilterBox onChange={this.handleChange} value={searchInput} />
