@@ -9,9 +9,10 @@ class Home extends Component {
     usaCities: []
   }
 
+
+
   handleChange = (e) => {
     const typedChar = e.target.value
-    console.log(typedChar)
     this.setState({
       searchInput: typedChar
     })
@@ -33,9 +34,10 @@ class Home extends Component {
     }
   }
   render() {
-
     const { usaCities, searchInput } = this.state;
-
+    // const filteredResults = usaCities.filter((item) => item.toLowerCase().includes(searchInput))
+    // console.log(filteredResults)
+    console.log(usaCities)
     return (
       <div>
         <FilterBox onChange={this.handleChange} value={searchInput} />
