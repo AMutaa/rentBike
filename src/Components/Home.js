@@ -42,7 +42,7 @@ class Home extends Component {
     // console.log(usaCities)
     return (
       <div>
-        <FilterBox onChange={this.handleChange} value={searchInput} />
+        <FilterBox placeholder="Search" onChange={this.handleChange} value={searchInput} />
         <h2 className="select">Select your City</h2>
         <div className="cities">
           {usaCities.map((city, index) => <City key={index} city={city} />)}
@@ -63,4 +63,5 @@ outline:none;
 border-radius: 4px;
 margin: 20px 0;
 font-size: 20px;
+padding-left:5px;
 `
