@@ -36,10 +36,10 @@ class Home extends Component {
   render() {
     const { usaCities, searchInput } = this.state;
     const filteredResults = usaCities.map((item) => item.location.city)
-    console.log(filteredResults)
+    // console.log(filteredResults)
     const filteredResults2 = usaCities.filter((item) => item.location.city.toLowerCase() === searchInput)
     console.log(filteredResults2)
-    console.log(usaCities)
+    // console.log(usaCities)
     return (
       <div>
         <FilterBox onChange={this.handleChange} value={searchInput} />
