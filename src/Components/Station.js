@@ -30,8 +30,6 @@ function emptySlotChecker(num) {
 
 
 const Station = ({ station }) => (
-
-
   <div className="station_detail">
     <div id="station_name"><h3>{station.name}</h3></div>
     <div><p><span>{station.free_bikes}</span><br />{freeBikechecker(station.free_bikes)}</p></div>

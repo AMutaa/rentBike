@@ -9,8 +9,6 @@ class Home extends Component {
     usaCities: []
   }
 
-
-
   handleChange = (e) => {
     const typedChar = e.target.value
     this.setState({
