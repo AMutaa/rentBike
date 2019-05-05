@@ -39,8 +39,11 @@ class Home extends Component {
       <div>
         <FilterBox placeholder="Type your city" onChange={this.handleChange} value={searchInput} />
         <h2 className="select">Select your City</h2>
-        <div className="cities">
-          {filteredResults.map((city, index) => <City key={index} city={city} />)}
+        <div>
+          {filteredResults <= 0 ?
+            <NoResults>Sorry, we don't have that city !</NoResults> :
+            <div className="cities">{filteredResults.map((city, index) => <City key={index} city={city} />)}</div>
+          }
         </div>
       </div >)
 
@@ -60,3 +63,10 @@ margin: 20px 0;
 font-size: 20px;
 padding-left:5px;
 `
+
+const NoResults = styled.h2`
+text-align: center;
+color: red
+`;
+
+
