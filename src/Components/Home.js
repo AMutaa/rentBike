@@ -33,17 +33,14 @@ class Home extends Component {
   }
   render() {
     const { usaCities, searchInput } = this.state;
-    const filteredResults = usaCities.map((item) => item.location.city)
-    // console.log(filteredResults)
-    const filteredResults2 = usaCities.filter((item) => item.location.city.toLowerCase() === searchInput)
-    console.log(filteredResults2)
-    // console.log(usaCities)
+    const filteredResults = usaCities.filter((item) => item.location.city.toLowerCase().includes(searchInput))
+
     return (
       <div>
-        <FilterBox placeholder="Search" onChange={this.handleChange} value={searchInput} />
+        <FilterBox placeholder="Type your city" onChange={this.handleChange} value={searchInput} />
         <h2 className="select">Select your City</h2>
         <div className="cities">
-          {usaCities.map((city, index) => <City key={index} city={city} />)}
+          {filteredResults.map((city, index) => <City key={index} city={city} />)}
         </div>
       </div >)
 
