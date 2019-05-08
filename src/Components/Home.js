@@ -37,11 +37,11 @@ class Home extends Component {
 
     return (
       <div>
-        <FilterBox placeholder="Type your city" onChange={this.handleChange} value={searchInput} />
+        <FilterBox placeholder="Enter your city" onChange={this.handleChange} value={searchInput} />
         <h2 className="select">Select your City</h2>
         <div>
           {filteredResults <= 0 ?
-            <NoResults>Sorry, we don't have that city !</NoResults> :
+            <NoResults>Sorry, that city is not available !</NoResults> :
             <div className="cities">{filteredResults.map((city, index) => <City key={index} city={city} />)}</div>
           }
         </div>
