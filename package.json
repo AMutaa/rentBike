@@ -11,6 +11,8 @@
     "clear": "rm -rf node_modules && npm install"
   },
   "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
