@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const City = ({ city }) => (
   <Link to={`/${city.id}`} className="city_name" style={{ textDecoration: "none" }} >
-    <h3>{city.location.city}</h3>
+    <h3 data-test='city'>{city.location.city}</h3>
   </Link >
 )
 

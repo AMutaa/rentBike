@@ -6,9 +6,13 @@ const props = {
   city: { location: { city: 'Kampala' } }
 }
 describe('It will test City Component', () => {
-  it('will render City Component', () => {
+  test('will render City Component', () => {
     const wrapper = shallow(<City {...props} />)
     expect(wrapper.exists()).toBe(true)
+  })
+  test('will render the right html', () => {
+    const wrapper = shallow(<City{...props} />)
+    expect(wrapper.find({ 'data-test': 'city' }).text()).toEqual(props.city.location.city)
   })
 
 })
