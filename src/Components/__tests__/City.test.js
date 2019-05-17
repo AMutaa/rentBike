@@ -8,7 +8,7 @@ const props = {
 describe('It will test City Component', () => {
   it('will render City Component', () => {
     const wrapper = shallow(<City {...props} />)
-
+    expect(wrapper.exists()).toBe(true)
   })
 
 })
