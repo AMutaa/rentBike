@@ -20,6 +20,8 @@ const App = () => (
           CITY BIKES
           <sup>USA</sup>
         </h1>
+        <div>
+        </div>
         <h2>
           A fun and convenient way to get around
        </h2>
