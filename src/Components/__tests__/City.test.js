@@ -14,5 +14,4 @@ describe('It will test City Component', () => {
     const wrapper = shallow(<City{...props} />)
     expect(wrapper.find({ 'data-test': 'city' }).text()).toEqual(props.city.location.city)
   })
-
 })
