@@ -17,4 +17,6 @@ describe('Testing the Station Component', () => {
     expect(wrapper.exists()).toBe(true)
   })
   test('renders the right html', () => { })
+  const wrapper = shallow(<Station{...props} />)
+  expect(wrapper.find('#station_name').text()).toEqual(props.station.name)
 })
