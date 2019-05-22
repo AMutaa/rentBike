@@ -14,4 +14,10 @@ describe('Tests Home Component', () => {
     const wrapper = mount(<Home />)
     expect(spy.calledOnce).toBeTruthy();
   })
+
+  test('user text is echoed', () => {
+    const wrapper = shallow(<Home />).find('FilterBox')
+    expect(wrapper.exists()).toBe(true)
+  })
+
 })
