@@ -4,17 +4,14 @@ const initialState = {
   usaCities: []
 };
 
-export default function(stat = initialState, action) {
+export default function(state = initialState, action) {
   const { type, usaCities } = action;
-  switch (key) {
+  switch (type) {
     case GET_CITIES:
       return {
         ...state,
         usaCities: usaCities
       };
-
-      break;
-
     default:
       return state;
   }
