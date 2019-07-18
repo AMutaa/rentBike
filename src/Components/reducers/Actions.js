@@ -1,6 +1,6 @@
 export const GET_CITIES = "GET_CITIES";
 
-export function getNetworks() {
+export function getCities() {
   return async function(dispatch) {
     const results = await fetch("https://api.citybik.es/v2/networks");
     const allBikes = await results.json();
