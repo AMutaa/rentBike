@@ -1,4 +1,4 @@
-import { GET_CITIES } from "./Actions";
+import { GET_CITIES } from "./BikeActions";
 
 const initialState = {
   usaCities: []

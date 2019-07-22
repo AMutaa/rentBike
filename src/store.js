@@ -1,12 +1,23 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import reducers from "./Components/reducers/Reducers";
-import logger from "redux-logger";
+import cities from "./Components/reducers/BikeReducers";
 import thunk from "redux-thunk";
 
-const middleware = [logger, thunk];
+const logger = store => next => action => {
+  let previousState = store.getState();
+  next(action);
+  let nextState = store.getState();
+  console.info(action.type, {
+    action,
+    previousState,
+    nextState
+  });
+};
+
 const reducer = combineReducers({
-  reducers
+  cities
 });
+
+const middleware = [logger, thunk];
 
 const store = createStore(reducer, applyMiddleware(...middleware));
 
