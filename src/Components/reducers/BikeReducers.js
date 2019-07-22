@@ -1,7 +1,14 @@
 import { GET_CITIES } from "./BikeActions";
 
 const initialState = {
-  usaCities: []
+  usaCities: [],
+  cityName: "",
+  cityBike: "",
+  stations: [],
+  longitude: "",
+  latitude: "",
+  name: "",
+  loading: true
 };
 
 export default function(state = initialState, action) {

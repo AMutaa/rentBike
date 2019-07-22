@@ -1,4 +1,5 @@
 export const GET_CITIES = "GET_CITIES";
+export const GET_STATIONS = "GET_STATIONS";
 
 export function getCities() {
   return async function(dispatch) {
@@ -12,4 +13,9 @@ export function getCities() {
       usaCities: cities
     });
   };
+}
+
+
+export function getStations{
+
 }

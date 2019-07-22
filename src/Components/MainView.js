@@ -8,6 +8,7 @@ class MainView extends Component {
     const { getCities } = this.props;
     getCities();
   }
+
   render() {
     const { usaCities } = this.props;
     console.log(usaCities);
