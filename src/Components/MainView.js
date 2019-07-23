@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getCities } from "./reducers/BikeActions";
+import City from "./City";
 
 class MainView extends Component {
   componentDidMount() {
@@ -14,7 +15,11 @@ class MainView extends Component {
     console.log(usaCities);
     return (
       <div>
-        <h3>CITY BIKES</h3>
+        <div className="cities">
+          {usaCities.map((city, index) => (
+            <City key={index} city={city} />
+          ))}
+        </div>
       </div>
     );
   }

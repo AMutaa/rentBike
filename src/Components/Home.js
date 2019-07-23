@@ -1,39 +1,15 @@
 import React, { Component } from "react";
-import City from "./City";
+
 import styled from "styled-components";
 import MainView from "./MainView";
 
 class Home extends Component {
   state = {
-    searchInput: "",
     usaCities: []
   };
 
-  handleChange = e => {
-    const typedChar = e.target.value;
-    this.setState({
-      searchInput: typedChar
-    });
-  };
-
-  async componentDidMount() {
-    try {
-      const results = await fetch("https://api.citybik.es/v2/networks");
-      const allBikes = await results.json();
-      const usaCities = allBikes.networks.filter(
-        item => item.location.country === "US"
-      );
-
-      this.setState({
-        usaCities: usaCities
-      });
-    } catch (e) {}
-  }
   render() {
-    const { usaCities, searchInput } = this.state;
-    const filteredResults = usaCities.filter(item =>
-      item.location.city.toLowerCase().includes(searchInput)
-    );
+    const { searchInput } = this.state;
 
     return (
       <div>
@@ -42,19 +18,8 @@ class Home extends Component {
           onChange={this.handleChange}
           value={searchInput}
         />
-        <MainView />
         <h2 className="select">Select your City</h2>
-        <div>
-          {filteredResults <= 0 ? (
-            <NoResults>Sorry, that city is not available !</NoResults>
-          ) : (
-            <div className="cities">
-              {filteredResults.map((city, index) => (
-                <City key={index} city={city} />
-              ))}
-            </div>
-          )}
-        </div>
+        <MainView />
       </div>
     );
   }

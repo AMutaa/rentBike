@@ -15,7 +15,10 @@ export function getCities() {
   };
 }
 
-
-export function getStations{
-
+export function getStations(id) {
+  return async function(dispatch) {
+    const results = await fetch(
+      `https://api.citybik.es/v2/networks/${this.props.match.params.id}`
+    );
+  };
 }
