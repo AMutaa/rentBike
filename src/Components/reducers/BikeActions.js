@@ -24,7 +24,7 @@ export function getCityDetails(id) {
       cityName: details.network.location.city,
       cityBike: details.network.name,
       stations: details.network.stations,
-      longitud: details.network.location.longitude,
+      longitude: details.network.location.longitude,
       latitude: details.network.location.latitude
     });
   };
