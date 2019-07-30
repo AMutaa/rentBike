@@ -1,46 +1,12 @@
 import React, { Component } from "react";
 import Stations from "./Stations";
 import Loading from "./Loading";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getCityDetails } from "./reducers/BikeActions";
 class CityDetail extends Component {
-  state = {
-    cityName: "",
-    cityBike: "",
-    stations: [],
-    longitude: "",
-    latitude: "",
-    name: "",
-    loading: true
-  };
-  async componentDidMount() {
-    const results = await fetch(
-      `https://api.citybik.es/v2/networks/${this.props.match.params.id}`
-    );
-    const details = await results.json();
-    console.log(details);
-    const cityName = details.network.location.city;
-    const cityBike = details.network.name;
-    const stations = details.network.stations;
-    const longitude = details.network.location.longitude;
-    const latitude = details.network.location.latitude;
-
-    console.log(this.props.match);
-    setTimeout(() => {
-      this.setState(
-        {
-          details: details,
-          cityName: cityName,
-          cityBike: cityBike,
-          stations: stations,
-          longitude: longitude,
-          latitude: latitude,
-          loading: false
-        },
-        this.renderMap()
-      );
-    }, 1000);
-  }
-  catch(e) {
-    console.log(e);
+  componentDidMount() {
+    console.log("rendered");
   }
 
   renderMap = () => {
@@ -80,26 +46,26 @@ class CityDetail extends Component {
   };
 
   render() {
-    const { cityName, cityBike, stations, loading } = this.state;
     return (
-      <div>
-        {loading ? (
-          <Loading />
-        ) : (
-          <div className="city_detail">
-            <div className="city_title">
-              <h3>{cityName}</h3>
-              <h3>{cityBike}</h3>
-            </div>
-            <div>
-              <Stations stations={stations} />
-            </div>
-            <div>
-              <div id="map" />
-            </div>
-          </div>
-        )}
-      </div>
+      <div>hello</div>
+      // <div>
+      //   {loading ? (
+      //     <Loading />
+      //   ) : (
+      //     <div className="city_detail">
+      //       <div className="city_title">
+      //         <h3>{cityName}</h3>
+      //         <h3>{cityBike}</h3>
+      //       </div>
+      //       <div>
+      //         <Stations stations={stations} />
+      //       </div>
+      //       <div>
+      //         <div id="map" />
+      //       </div>
+      //     </div>
+      //   )}
+      // </div>
     );
   }
 }
@@ -113,4 +79,25 @@ function loadScript(url) {
   index.parentNode.insertBefore(script, index);
 }
 
-export default CityDetail;
+const mapStateToProps = state => ({
+  usaCities: state.cities.usaCities,
+  cityName: state.cities.cityName,
+  cityBike: state.cities.cityBike,
+  stations: state.cities.stations,
+  longitude: state.cities.longitude,
+  latitude: state.cities.latitude,
+  name: state.cities.name,
+  loading: true
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getCityDetails
+    },
+    dispatch
+  );
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CityDetail);
