@@ -49,26 +49,34 @@ class CityDetail extends Component {
 
   render() {
     const { detail } = this.props;
+    console.log(this.props);
     return (
       <div>
-        {detail.loading ? (
-          <Loading />
-        ) : (
-          <div className="city_detail">
-            <div className="city_title">
-              <h3>{detail.cityName}</h3>
-              <h3>{detail.cityBike}</h3>
-            </div>
-            <div>
-              <Stations stations={detail.stations} />
-            </div>
-            <div>
-              <div id="map" />
-            </div>
-          </div>
-        )}
+        <h3>{this.props.cityName}</h3>
       </div>
     );
+    // return (
+    //   <div>
+    //     {
+    //       (detail.loading ? (
+    //         <Loading />
+    //       ) : (
+    //         <div className="city_detail">
+    //           <div className="city_title">
+    //             <h3>{detail.cityName}</h3>
+    //             <h3>{detail.cityBike}</h3>
+    //           </div>
+    //           <div>
+    //             <Stations stations={detail.stations} />
+    //           </div>
+    //           <div>
+    //             <div id="map" />
+    //           </div>
+    //         </div>
+    //       ))
+    //     }
+    //   </div>
+    // );
   }
 }
 
@@ -82,7 +90,8 @@ function loadScript(url) {
 }
 
 const mapStateToProps = state => ({
-  detail: state.cities
+  usaCities: state.cities.usaCities,
+  cityName: state.cities.cityName
 });
 
 const mapDispatchToProps = dispatch =>
