@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 //MyFunctions
 
@@ -41,8 +42,7 @@ const Station = ({ station }) => (
       </p>
     </div>
     <div id="station_timestamp">
-      {/* To do: Convert to date and time */}
-      <p>{station.timestamp}</p>
+      <p>{moment(station.timestamp).format("MMMM Do YYYY, h:mm:ss a")}</p>
     </div>
   </div>
 );
