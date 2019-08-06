@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import styled from "styled-components";
 import MainView from "./MainView";
 
@@ -36,9 +35,4 @@ const FilterBox = styled.input`
   margin: 20px 0;
   font-size: 20px;
   padding-left: 5px;
-`;
-
-const NoResults = styled.h2`
-  text-align: center;
-  color: red;
 `;

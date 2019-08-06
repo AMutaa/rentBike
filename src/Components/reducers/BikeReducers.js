@@ -26,7 +26,8 @@ export default function(state = initialState, action) {
         cityBike: action.cityBike,
         stations: action.stations,
         longitude: action.longitude,
-        latitude: action.latitude
+        latitude: action.latitude,
+        loading: action.loading
       };
     default:
       return state;

@@ -22,7 +22,7 @@ class CityDetail extends Component {
     //Create a map
 
     var map = new window.google.maps.Map(document.getElementById("map"), {
-      center: { lat: this.state.latitude, lng: this.state.longitude },
+      center: { lat: this.props.latitude, lng: this.props.longitude },
       zoom: 15
     });
     //Create an InfoWindow
@@ -48,35 +48,28 @@ class CityDetail extends Component {
   };
 
   render() {
-    // const { detail } = this.props;
     console.log(this.props);
+    const { stations, cityName, loading } = this.props;
+
     return (
       <div>
-        <h3>{this.props.cityName}</h3>
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="city_detail">
+            <div className="city_title">
+              <h3>{cityName}</h3>
+            </div>
+            <div>
+              <Stations stations={stations} />
+            </div>
+            <div>
+              <div id="map" />
+            </div>
+          </div>
+        )}
       </div>
     );
-    // return (
-    //   <div>
-    //     {
-    //       (detail.loading ? (
-    //         <Loading />
-    //       ) : (
-    //         <div className="city_detail">
-    //           <div className="city_title">
-    //             <h3>{detail.cityName}</h3>
-    //             <h3>{detail.cityBike}</h3>
-    //           </div>
-    //           <div>
-    //             <Stations stations={detail.stations} />
-    //           </div>
-    //           <div>
-    //             <div id="map" />
-    //           </div>
-    //         </div>
-    //       ))
-    //     }
-    //   </div>
-    // );
   }
 }
 
@@ -90,8 +83,12 @@ function loadScript(url) {
 }
 
 const mapStateToProps = state => ({
-  usaCities: state.cities.usaCities,
-  cityName: state.cities.cityName
+  cityName: state.cities.cityName,
+  cityBike: state.cities.name,
+  stations: state.cities.stations,
+  longitude: state.cities.longitude,
+  latitude: state.cities.latitude,
+  loading: state.cities.loading
 });
 
 const mapDispatchToProps = dispatch =>

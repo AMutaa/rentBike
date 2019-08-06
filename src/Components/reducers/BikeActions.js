@@ -26,7 +26,7 @@ export function getCityDetails(id) {
       stations: details.network.stations,
       longitude: details.network.location.longitude,
       latitude: details.network.location.latitude,
-      loading: true
+      loading: false
     });
   };
 }
