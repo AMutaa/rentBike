@@ -36,3 +36,8 @@ const FilterBox = styled.input`
   font-size: 20px;
   padding-left: 5px;
 `;
+
+const NoResults = styled.h2`
+  text-align: center;
+  color: red;
+`;

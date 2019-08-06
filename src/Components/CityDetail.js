@@ -20,7 +20,6 @@ class CityDetail extends Component {
 
   initMap = () => {
     //Create a map
-
     var map = new window.google.maps.Map(document.getElementById("map"), {
       center: { lat: this.props.latitude, lng: this.props.longitude },
       zoom: 15
@@ -28,7 +27,7 @@ class CityDetail extends Component {
     //Create an InfoWindow
     var infowindow = new window.google.maps.InfoWindow();
 
-    this.state.stations.forEach(station => {
+    this.props.stations.forEach(station => {
       var contentString = `${station.name}`;
       //Create a Marker
       var marker = new window.google.maps.Marker({
@@ -50,7 +49,7 @@ class CityDetail extends Component {
   render() {
     console.log(this.props);
     const { stations, cityName, loading } = this.props;
-
+    this.renderMap();
     return (
       <div>
         {loading ? (
