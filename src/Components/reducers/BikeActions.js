@@ -1,5 +1,5 @@
 export const GET_CITIES = "GET_CITIES";
-export const CITY_DETAILS = "GET_DETAILS";
+export const GET_DETAILS = "GET_DETAILS";
 
 export function getCities() {
   return async function(dispatch) {
@@ -20,7 +20,7 @@ export function getCityDetails(id) {
     const results = await fetch(`https://api.citybik.es/v2/networks/${id}`);
     const details = await results.json();
     return dispatch({
-      type: "CITY_DETAILS",
+      type: "GET_DETAILS",
       cityName: details.network.location.city,
       cityBike: details.network.name,
       stations: details.network.stations,

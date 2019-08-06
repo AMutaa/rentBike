@@ -1,4 +1,4 @@
-import { GET_CITIES, CITY_DETAILS } from "./BikeActions";
+import { GET_CITIES, GET_DETAILS } from "./BikeActions";
 
 const initialState = {
   usaCities: [],
@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
         ...state,
         usaCities: action.usaCities
       };
-    case CITY_DETAILS:
+    case GET_DETAILS:
       return {
         ...state,
         cityName: action.cityName,

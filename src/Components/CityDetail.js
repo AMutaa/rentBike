@@ -8,7 +8,7 @@ class CityDetail extends Component {
   componentDidMount() {
     const { getCityDetails } = this.props;
     getCityDetails(this.props.match.params.id);
-    console.log(this.props);
+    console.log(this.props.match.params.id);
   }
 
   renderMap = () => {
@@ -48,7 +48,7 @@ class CityDetail extends Component {
   };
 
   render() {
-    const { detail } = this.props;
+    // const { detail } = this.props;
     console.log(this.props);
     return (
       <div>

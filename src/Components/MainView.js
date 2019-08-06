@@ -11,6 +11,7 @@ class MainView extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { usaCities } = this.props;
     console.log(usaCities);
     return (
