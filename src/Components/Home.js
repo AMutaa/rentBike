@@ -6,18 +6,31 @@ import { getCities } from "./reducers/BikeActions";
 import City from "./City";
 
 class Home extends Component {
-  state = {
-    usaCities: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      usaCities: [],
+      searchInput: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
   componentDidMount() {
     const { getCities } = this.props;
     getCities();
   }
-
+  handleChange(e) {
+    const typedChar = e.target.value;
+    this.setState({
+      searchInput: typedChar
+    });
+  }
   render() {
     const { searchInput } = this.state;
     const { usaCities } = this.props;
-    console.log(this.props);
+    const filterdResults = usaCities.filter(
+      item => item.location.city.toLowerCase() === searchInput
+    );
+    console.log(filterdResults);
     return (
       <div>
         <FilterBox
