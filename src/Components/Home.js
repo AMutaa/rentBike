@@ -27,10 +27,10 @@ class Home extends Component {
   render() {
     const { searchInput } = this.state;
     const { usaCities } = this.props;
-    const filterdResults = usaCities.filter(
-      item => item.location.city.toLowerCase() === searchInput
+    const filteredResults = usaCities.filter(item =>
+      item.location.city.includes(searchInput)
     );
-    console.log(filterdResults);
+
     return (
       <div>
         <FilterBox
@@ -41,7 +41,7 @@ class Home extends Component {
         <h2 className="select">Select your City</h2>
 
         <div className="cities">
-          {usaCities.map((city, index) => (
+          {filteredResults.map((city, index) => (
             <City key={index} city={city} />
           ))}
         </div>
