@@ -10,14 +10,16 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <h1>
-            CITY BIKES
-            <sup>USA</sup>
-          </h1>
-          <div />
-          <h2>A fun and convenient way to get around</h2>
-        </Link>
+        <div style={{ padding: "0 10px" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <h1>
+              RENT BIKE
+              <sup>USA</sup>
+            </h1>
+            <div />
+            <h3>A fun and convenient way to get around</h3>
+          </Link>
+        </div>
 
         <Switch>
           <Route exact path="/" component={Home} />
