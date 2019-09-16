@@ -4,6 +4,8 @@ import Loading from "./Loading";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getCityDetails } from "./reducers/BikeActions";
+import styled from "styled-components";
+
 class CityDetail extends Component {
   componentDidMount() {
     const { getCityDetails } = this.props;
@@ -27,7 +29,8 @@ class CityDetail extends Component {
     var infowindow = new window.google.maps.InfoWindow();
 
     this.props.stations.forEach(station => {
-      var contentString = `${station.name}`;
+      // var contentString = `${station.name}`;
+      var contentString = "<div id='content'>Station Name</div>";
       //Create a Marker
       var marker = new window.google.maps.Marker({
         position: { lat: station.latitude, lng: station.longitude },

@@ -8,6 +8,7 @@ body {
   margin: 10px auto;
   font-family: "Open Sans Condensed", sans-serif;
   background: #1b1f1d;
+  padding: 0 20px;
 }
 
 h1 {
@@ -129,4 +130,11 @@ span {
   .city_detail {
     grid-template-columns: 1fr;
   }
+}
+#content {
+  width: 300px;
+  height: 100px;
+}
+.gm-ui-hover-effect {
+  width: 50px;
 }
