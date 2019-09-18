@@ -13,11 +13,11 @@ const App = () => (
         <div style={{ padding: "0 10px" }}>
           <Link to="/" style={{ textDecoration: "none" }}>
             <h1>
-              RENT BIKE
+              rentBike
               <sup>USA</sup>
             </h1>
             <div />
-            <h3>A fun and convenient way to get around</h3>
+            <h4>A fun and convenient way to get around</h4>
           </Link>
         </div>
 
