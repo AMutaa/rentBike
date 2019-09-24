@@ -34,11 +34,10 @@ class Home extends Component {
     return (
       <div>
         <FilterBox
-          placeholder="Enter your city"
+          placeholder="Search your city"
           onChange={this.handleChange}
           value={searchInput}
         />
-        <h2 className="select">Select your City</h2>
 
         <div className="cities">
           {filteredResults.map((city, index) => (
@@ -67,12 +66,13 @@ export default connect(
 )(Home);
 
 const FilterBox = styled.input`
-  width: 300px;
-  height: 50px;
-  border: 2px solid #ffbe06;
+  width: 200px;
+  height: 30px;
+  border: none;
   outline: none;
-  border-radius: 4px;
-  margin: 20px 0;
-  font-size: 20px;
+  background: #dcf2f2;
+  border-radius: 3px;
+  margin: 50px 0;
+  font-size: 12px;
   padding-left: 5px;
 `;
