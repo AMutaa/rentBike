@@ -10,7 +10,7 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
-        <div style={{ padding: "0 10px" }}>
+        <div style={{ padding: "0 145px" }}>
           <Link to="/" style={{ textDecoration: "none" }}>
             <h1>
               rentBike
