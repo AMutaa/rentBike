@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Stations from "./Stations";
 import Loading from "./Loading";
 import { connect } from "react-redux";
@@ -56,17 +56,19 @@ class CityDetail extends Component {
         {loading ? (
           <Loading />
         ) : (
-          <div className="city_detail">
+          <Fragment>
             <div className="city_title">
               <h3>{cityName}</h3>
             </div>
-            <div>
-              <Stations stations={stations} />
-            </div>
-            <div>
-              <div id="map" />
-            </div>
-          </div>
+            <Detail>
+              <div>
+                <Stations stations={stations} />
+              </div>
+              <div>
+                <div id="map" />
+              </div>
+            </Detail>
+          </Fragment>
         )}
       </div>
     );
@@ -102,3 +104,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CityDetail);
+
+const Detail = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+`;

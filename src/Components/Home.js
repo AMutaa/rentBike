@@ -39,11 +39,11 @@ class Home extends Component {
           value={searchInput}
         />
 
-        <div className="cities">
+        <Cities>
           {filteredResults.map((city, index) => (
             <City key={index} city={city} />
           ))}
-        </div>
+        </Cities>
       </div>
     );
   }
@@ -75,4 +75,9 @@ const FilterBox = styled.input`
   margin: 50px 0;
   font-size: 12px;
   padding-left: 5px;
+`;
+
+const Cities = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `;
