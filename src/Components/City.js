@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { whileStatement } from "@babel/types";
 
 const City = ({ city }) => (
@@ -15,7 +16,8 @@ const City = ({ city }) => (
       height: "30px",
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
+      margin: "0.2em 0"
     }}
   >
     <p data-test="city">{city.location.city}</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import styled from "styled-components";
 
 //MyFunctions
 
@@ -24,27 +25,45 @@ function emptySlotChecker(num) {
 }
 
 const Station = ({ station }) => (
-  <div className="station_detail">
-    <div id="station_name">
+  <StationCard>
+    <Name id="station_name">
       <h3>{station.name}</h3>
-    </div>
-    <div>
-      <p>
-        <span>{station.free_bikes}</span>
-        <br />
-        {freeBikechecker(station.free_bikes)}
-      </p>
-    </div>
-    <div>
-      <p>
-        <span>{station.empty_slots}</span>
-        <br /> {emptySlotChecker(station.empty_slots)}
-      </p>
-    </div>
-    <div id="station_timestamp">
+    </Name>
+    <Bikes>
+      <div>
+        <p>{freeBikechecker(station.free_bikes)}</p>
+        <p>{station.free_bikes}</p>
+      </div>
+      <div>
+        <div>
+          <p>{emptySlotChecker(station.empty_slots)}</p>
+          <p>{station.empty_slots}</p>
+        </div>
+      </div>
+    </Bikes>
+    <Timestamp>
       <p>{moment(station.timestamp).format("MMMM Do YYYY, h:mm:ss a")}</p>
-    </div>
-  </div>
+    </Timestamp>
+  </StationCard>
 );
 
 export default Station;
+
+const StationCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 120px;
+  margin: 1em auto;
+  border: 2px solid black;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
+`;
+const Name = styled.div``;
+const Bikes = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+const Timestamp = styled.div``;
