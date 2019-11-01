@@ -15989,14 +15989,6 @@ module.exports = __webpack_require__(117);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-// @remove-on-eject-begin
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-// @remove-on-eject-end
 
 
 if (typeof Promise === 'undefined') {
@@ -32963,4 +32955,4 @@ module.exports = __webpack_require__.p + "static/media/bicycle.8971ba05.svg";
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.b2fc4a15.js.map
+//# sourceMappingURL=main.f38056e3.js.map
