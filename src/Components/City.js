@@ -1,27 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import { whileStatement } from "@babel/types";
+import styled from "styled-components";
 
 const City = ({ city }) => (
-  <Link
-    to={`/${city.id}`}
-    style={{
-      textDecoration: "none",
-      fontSize: "12px",
-      borderRadius: "3px",
-      backgroundColor: "#9F9D9D",
-      width: "200px",
-      color: "white",
-      height: "30px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      margin: "0.2em 0"
-    }}
-  >
-    <p data-test="city">{city.location.city}</p>
+  <Link to={`/${city.id}`} style={{ textDecoration: "none" }}>
+    <CityCard>{city.location.city}</CityCard>
   </Link>
 );
 
 export default City;
+
+const CityCard = styled.div`
+  width: 250px;
+  background-color: #8c9cdb;
+  border-radius: 3px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2em 0;
+  fontsize: 12px;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background: #5f8aff;
+  }
+`;
