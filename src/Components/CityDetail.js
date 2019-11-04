@@ -36,6 +36,7 @@ class CityDetail extends Component {
         position: { lat: station.latitude, lng: station.longitude },
         map: map,
         title: "Hello World"
+        // animation: google.maps.Animation.DROP
       });
 
       //Click On A Marker
@@ -57,9 +58,7 @@ class CityDetail extends Component {
           <Loading />
         ) : (
           <Fragment>
-            <div className="city_title">
-              <h3>{cityName}</h3>
-            </div>
+            <CityTitle>{cityName}</CityTitle>
             <Detail>
               <div>
                 <Stations stations={stations} />
@@ -108,4 +107,12 @@ export default connect(
 const Detail = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
+`;
+
+const CityTitle = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  margin: 1em 0;
 `;

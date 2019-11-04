@@ -31,12 +31,12 @@ const Station = ({ station }) => (
     </Name>
     <Bikes>
       <div>
-        <p>{freeBikechecker(station.free_bikes)}</p>
+        <h4>{freeBikechecker(station.free_bikes)}</h4>
         <p>{station.free_bikes}</p>
       </div>
       <div>
         <div>
-          <p>{emptySlotChecker(station.empty_slots)}</p>
+          <h4>{emptySlotChecker(station.empty_slots)}</h4>
           <p>{station.empty_slots}</p>
         </div>
       </div>
@@ -50,20 +50,34 @@ const Station = ({ station }) => (
 export default Station;
 
 const StationCard = styled.div`
+  color: white;
   display: flex;
   flex-direction: column;
   width: 300px;
   height: 120px;
   margin: 1em auto;
-  border: 2px solid black;
   border-radius: 4px;
   justify-content: space-between;
   align-items: center;
+  background-color: #8c9cdb;
 `;
-const Name = styled.div``;
+const Name = styled.div`
+  border-bottom: 2px solid white;
+  h3 {
+    margin: 0.5em 0;
+  }
+`;
 const Bikes = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
   justify-content: space-evenly;
+  div {
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
 `;
 const Timestamp = styled.div``;

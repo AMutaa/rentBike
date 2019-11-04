@@ -18,10 +18,11 @@ const CityCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.2em 0;
+  margin: 0.2em;
   fontsize: 12px;
   color: white;
   text-decoration: none;
+  background-color: #8c9cdb;
 
   &:hover {
     background: #5f8aff;
