@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import cities from "./Components/reducers/BikeReducers";
+import cities from "./BikeReducers";
 import thunk from "redux-thunk";
 
 const logger = store => next => action => {

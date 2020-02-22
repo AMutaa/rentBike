@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../redux/store";
 import styled from "styled-components";
-import Home from "./Components/Home";
-import CityDetail from "./Components/CityDetail";
-import "./App.css";
+import Home from "./Home";
+import CityDetail from "./CityDetail";
+import "../styles/App.css";
 
 const App = () => (
   <Provider store={store}>

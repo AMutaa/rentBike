@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getCities } from "./reducers/BikeActions";
+import { getCities } from "../redux/BikeActions";
 import City from "./City";
 
 class Home extends Component {
@@ -60,10 +60,7 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 const FilterBox = styled.input`
   width: 200px;

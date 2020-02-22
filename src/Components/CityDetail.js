@@ -3,7 +3,7 @@ import Stations from "./Stations";
 import Loading from "./Loading";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getCityDetails } from "./reducers/BikeActions";
+import { getCityDetails } from "../redux/BikeActions";
 import styled from "styled-components";
 
 class CityDetail extends Component {
@@ -99,10 +99,7 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CityDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(CityDetail);
 
 const Detail = styled.div`
   display: grid;
